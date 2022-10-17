@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32002.185
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiuJitsuRecords", "src\JiuJitsuRecords.WebAPI\JiuJitsuRecords.WebAPI.csproj", "{0D8A86BC-53E1-4449-BCD6-09DCE2927CA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain", "2. Domain", "{A1BB9E70-4139-41DC-A000-F81CBA75BFA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Host", "1. Host", "{8CF4386A-2918-488E-85B2-66F753C5C53F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiuJitsuRecords.Domain", "src\JiuJitsuRecords.Domain\JiuJitsuRecords.Domain.csproj", "{BC653E4B-DDAB-438E-A812-731521D12B2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Infraestructure", "3. Infraestructure", "{C42F7B7E-9E13-4374-91A5-1EF9C80DDA76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D8A86BC-53E1-4449-BCD6-09DCE2927CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D8A86BC-53E1-4449-BCD6-09DCE2927CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D8A86BC-53E1-4449-BCD6-09DCE2927CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D8A86BC-53E1-4449-BCD6-09DCE2927CA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC653E4B-DDAB-438E-A812-731521D12B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC653E4B-DDAB-438E-A812-731521D12B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC653E4B-DDAB-438E-A812-731521D12B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC653E4B-DDAB-438E-A812-731521D12B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0D8A86BC-53E1-4449-BCD6-09DCE2927CA3} = {8CF4386A-2918-488E-85B2-66F753C5C53F}
+		{BC653E4B-DDAB-438E-A812-731521D12B2E} = {A1BB9E70-4139-41DC-A000-F81CBA75BFA8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD39A442-97C4-4A77-A239-08E9683CFCC6}
+	EndGlobalSection
+EndGlobal
