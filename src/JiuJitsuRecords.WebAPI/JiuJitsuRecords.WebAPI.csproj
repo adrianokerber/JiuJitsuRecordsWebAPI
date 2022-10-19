@@ -4,13 +4,16 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>a761f651-f694-4169-bf06-2f899ad4be8b</UserSecretsId>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="GraphQL" Version="7.0.2" />
+    <PackageReference Include="GraphQL.MicrosoftDI" Version="7.0.2" />
+    <PackageReference Include="GraphQL.Server.Authorization.AspNetCore" Version="5.0.2" />
+    <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="7.1.0" />
+    <PackageReference Include="GraphQL.Server.Ui.Altair" Version="7.1.0" />
+    <PackageReference Include="GraphQL.SystemTextJson" Version="7.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
   </ItemGroup>
 
   <ItemGroup>

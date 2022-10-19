@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiuJitsuRecords", "src\JiuJitsuRecords.WebAPI\JiuJitsuRecords.WebAPI.csproj", "{0D8A86BC-53E1-4449-BCD6-09DCE2927CA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JiuJitsuRecords.WebAPI", "src\JiuJitsuRecords.WebAPI\JiuJitsuRecords.WebAPI.csproj", "{0D8A86BC-53E1-4449-BCD6-09DCE2927CA3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain", "2. Domain", "{A1BB9E70-4139-41DC-A000-F81CBA75BFA8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Domain", "3. Domain", "{A1BB9E70-4139-41DC-A000-F81CBA75BFA8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Host", "1. Host", "{8CF4386A-2918-488E-85B2-66F753C5C53F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiuJitsuRecords.Domain", "src\JiuJitsuRecords.Domain\JiuJitsuRecords.Domain.csproj", "{BC653E4B-DDAB-438E-A812-731521D12B2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JiuJitsuRecords.Domain", "src\JiuJitsuRecords.Domain\JiuJitsuRecords.Domain.csproj", "{BC653E4B-DDAB-438E-A812-731521D12B2E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Infraestructure", "3. Infraestructure", "{C42F7B7E-9E13-4374-91A5-1EF9C80DDA76}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Infraestructure", "4. Infraestructure", "{C42F7B7E-9E13-4374-91A5-1EF9C80DDA76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Application", "2. Application", "{99925DB0-187F-421A-A167-559853C08D77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

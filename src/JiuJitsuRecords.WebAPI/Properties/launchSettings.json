@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "HeroesRecordAPI": {
+    "JiuJitsuRecords.WebAPI": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["HeroesRecordAPI/HeroesRecordAPI.csproj", "HeroesRecordAPI/"]
-RUN dotnet restore "HeroesRecordAPI/HeroesRecordAPI.csproj"
+COPY ["JiuJitsuRecords.WebAPI/JiuJitsuRecords.WebAPI.csproj", "JiuJitsuRecords.WebAPI/"]
+RUN dotnet restore "JiuJitsuRecords.WebAPI/JiuJitsuRecords.WebAPI.csproj"
 COPY . .
-WORKDIR "/src/HeroesRecordAPI"
-RUN dotnet build "HeroesRecordAPI.csproj" -c Release -o /app/build
+WORKDIR "/src/JiuJitsuRecords"
+RUN dotnet build "JiuJitsuRecords.WebAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "HeroesRecordAPI.csproj" -c Release -o /app/publish
+RUN dotnet publish "JiuJitsuRecords.WebAPI.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "HeroesRecordAPI.dll"]
+ENTRYPOINT ["dotnet", "JiuJitsuRecords.WebAPI.dll"]
