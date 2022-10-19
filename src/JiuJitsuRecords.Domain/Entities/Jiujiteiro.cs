@@ -1,4 +1,4 @@
-﻿namespace HeroesRecordAPI.Domain.Entity
+﻿namespace JiuJitsuRecords.Domain.Entities
 {
     public record Jiujiteiro(string Apelido,
                              string Nome,
