@@ -1,6 +1,7 @@
 ﻿namespace JiuJitsuRecords.Domain.Entities
 {
-    public record Jiujiteiro(string Apelido,
+    public record Jiujiteiro(int Id,
+                             string Apelido,
                              string Nome,
                              string Sobrenome,
                              DateTimeOffset Nascimento,

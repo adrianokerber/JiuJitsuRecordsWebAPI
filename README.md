@@ -17,24 +17,25 @@ https://localhost:7193/ui/altair
 ```
 {
   jiujiteiros {
+    id
     nome
     sobrenome
+    apelido
   }
 }
 
 
 ######################
 ### Mutation example:
-# mutation
-# {
-#   registerAthlete(nome: "Atleta Fake")
-#   {
-#       id
-#       message
-#   }
+# mutation {
+#  registerAthlete(id: 8 nome: "Adriano")
+#  {
+#    nome
+#    sobrenome
+#  }
 # }
 
-#### Query option 2:
+#### Optional: when you query you can put the query in the beginning of the scope
 query {
   jiujiteiros {
     nome
@@ -51,3 +52,4 @@ curl --location --request POST 'https://localhost:7193/graphql' \
 ```
 
 > Note: the port of the URL examples might change
+> Address for regular RESTful WebAPI => https://localhost:7193/swagger/index.html

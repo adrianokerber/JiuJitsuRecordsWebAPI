@@ -1,17 +1,17 @@
 ﻿using GraphQL.Types;
-using JiuJitsuRecords.Domain.Services;
+using JiuJitsuRecords.Domain.Repositories;
 
 namespace JiuJitsuRecords.WebAPI.Schemas
 {
     public class JiujiteirosQuery : ObjectGraphType
     {
-        public JiujiteirosQuery(IJiujitsuAthleteService jiujitsuAthleteService)
+        public JiujiteirosQuery(IAthleteRepository athleteRepository)
         {
             Field<ListGraphType<JiujiteiroType>>("jiujiteiros")
                 .Resolve(context => {
-                    var jiujitsuAthletes = jiujitsuAthleteService.GetJiujitsuAthletes()
-                                                                 .GetAwaiter()
-                                                                 .GetResult();
+                    var jiujitsuAthletes = athleteRepository.GetAthletes()
+                                                            .GetAwaiter()
+                                                            .GetResult();
                     return jiujitsuAthletes;
                 });
         }

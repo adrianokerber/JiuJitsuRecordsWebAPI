@@ -19,6 +19,7 @@ builder.Services.AddGraphQL(options =>
                     options.ConfigureExecution((opt, next) =>
                     {
                         opt.EnableMetrics = true;
+                        //opt.ThrowOnUnhandledException = true; // Enable to debug errors
                         return next(opt);
                     }).AddSystemTextJson()
                 );
