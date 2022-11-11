@@ -1,4 +1,6 @@
-﻿using JiuJitsuRecords.Domain.Services;
+﻿using JiuJitsuRecords.Domain.Repositories;
+using JiuJitsuRecords.Domain.Services;
+using JiuJitsuRecords.WebAPI.Repositories;
 using JiuJitsuRecords.WebAPI.Services;
 
 namespace JiuJitsuRecords.WebAPI
@@ -8,10 +10,10 @@ namespace JiuJitsuRecords.WebAPI
         public static void ConfigureApplicationDependencies(this IServiceCollection services)
         {
             // Repositories
-            // TODO: add data repository here!
+            services.AddSingleton<IAthleteRepository, AthleteRepository>(); // NOTA: criado como singleton pois estamos utilizando os dados em memória
 
             // Services
-            services.AddTransient<IJiujitsuAthleteService, JiujitsuAthleteService>();
+            //services.AddTransient<IJiujitsuAthleteService, JiujitsuAthleteService>();
         }
     }
 }

@@ -5,8 +5,11 @@ namespace JiuJitsuRecords.WebAPI.Schemas
 {
     public class JiujiteiroType : ObjectGraphType<Jiujiteiro>
     {
-        public JiujiteiroType()//IJiujitsuAthleteService jiujitsuAthleteService)
+        public JiujiteiroType()
         {
+            Name = "Jiujiteiro";
+            Description = "Jiujiteiro Type";
+            Field(j => j.Id);
             Field(j => j.Apelido);
             Field(j => j.Nome);
             Field(j => j.Sobrenome);

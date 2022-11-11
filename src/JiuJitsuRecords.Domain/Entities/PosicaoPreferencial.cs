@@ -2,8 +2,8 @@
 {
     public enum PosicaoPreferencial
     {
-        Guard,
-        Pass,
-        Any
+        Guard = 2,
+        Pass = 4,
+        Any = 8
     }
 }
