@@ -1,7 +1,5 @@
 ﻿using JiuJitsuRecords.Domain.Repositories;
-using JiuJitsuRecords.Domain.Services;
-using JiuJitsuRecords.WebAPI.Repositories;
-using JiuJitsuRecords.WebAPI.Services;
+using JiuJitsuRecords.Infraestructure.Repositories;
 
 namespace JiuJitsuRecords.WebAPI
 {

@@ -1,7 +1,7 @@
 using JiuJitsuRecords.Domain.Entities;
 using JiuJitsuRecords.Domain.Repositories;
 
-namespace JiuJitsuRecords.WebAPI.Repositories
+namespace JiuJitsuRecords.Infraestructure.Repositories
 {
     public class AthleteRepository : IAthleteRepository
     {

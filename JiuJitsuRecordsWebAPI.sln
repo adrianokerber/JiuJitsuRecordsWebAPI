@@ -5,15 +5,21 @@ VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JiuJitsuRecords.WebAPI", "src\JiuJitsuRecords.WebAPI\JiuJitsuRecords.WebAPI.csproj", "{0D8A86BC-53E1-4449-BCD6-09DCE2927CA3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Domain", "3. Domain", "{A1BB9E70-4139-41DC-A000-F81CBA75BFA8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain Layer", "2. Domain Layer", "{A1BB9E70-4139-41DC-A000-F81CBA75BFA8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Host", "1. Host", "{8CF4386A-2918-488E-85B2-66F753C5C53F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Host Layer", "4. Host Layer", "{8CF4386A-2918-488E-85B2-66F753C5C53F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JiuJitsuRecords.Domain", "src\JiuJitsuRecords.Domain\JiuJitsuRecords.Domain.csproj", "{BC653E4B-DDAB-438E-A812-731521D12B2E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Infraestructure", "4. Infraestructure", "{C42F7B7E-9E13-4374-91A5-1EF9C80DDA76}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Infraestructure Layer", "5. Infraestructure Layer", "{C42F7B7E-9E13-4374-91A5-1EF9C80DDA76}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Application", "2. Application", "{99925DB0-187F-421A-A167-559853C08D77}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Application Layer", "3. Application Layer", "{99925DB0-187F-421A-A167-559853C08D77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Test Layer", "1. Test Layer", "{CCC3E2D8-D3CC-43F2-A239-651604DB766D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JiuJitsuRecords.TDD", "tst\JiuJitsuRecords.TDD\JiuJitsuRecords.TDD.csproj", "{35DF38BC-3A11-4E76-8CD6-FEFCE7F94657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JiuJitsuRecords.Infraestructure", "src\JiuJitsuRecords.Infraestructure\JiuJitsuRecords.Infraestructure.csproj", "{2927DDDE-CC4A-453D-9DB0-CAA711CA48A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +35,14 @@ Global
 		{BC653E4B-DDAB-438E-A812-731521D12B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC653E4B-DDAB-438E-A812-731521D12B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC653E4B-DDAB-438E-A812-731521D12B2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35DF38BC-3A11-4E76-8CD6-FEFCE7F94657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35DF38BC-3A11-4E76-8CD6-FEFCE7F94657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35DF38BC-3A11-4E76-8CD6-FEFCE7F94657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35DF38BC-3A11-4E76-8CD6-FEFCE7F94657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2927DDDE-CC4A-453D-9DB0-CAA711CA48A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2927DDDE-CC4A-453D-9DB0-CAA711CA48A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2927DDDE-CC4A-453D-9DB0-CAA711CA48A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2927DDDE-CC4A-453D-9DB0-CAA711CA48A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +50,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0D8A86BC-53E1-4449-BCD6-09DCE2927CA3} = {8CF4386A-2918-488E-85B2-66F753C5C53F}
 		{BC653E4B-DDAB-438E-A812-731521D12B2E} = {A1BB9E70-4139-41DC-A000-F81CBA75BFA8}
+		{35DF38BC-3A11-4E76-8CD6-FEFCE7F94657} = {CCC3E2D8-D3CC-43F2-A239-651604DB766D}
+		{2927DDDE-CC4A-453D-9DB0-CAA711CA48A4} = {C42F7B7E-9E13-4374-91A5-1EF9C80DDA76}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD39A442-97C4-4A77-A239-08E9683CFCC6}

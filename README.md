@@ -63,3 +63,6 @@ curl --location --request POST 'https://localhost:7193/graphql' \
 
 > Note: the port of the URL examples might change
 > Address for regular RESTful WebAPI => https://localhost:7193/swagger/index.html
+
+## Run tests
+In order to run the test just use: `dotnet test`
