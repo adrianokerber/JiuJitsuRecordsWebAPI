@@ -13,6 +13,7 @@ namespace JiuJitsuRecords.WebAPI.Schemas
             Field(j => j.Apelido);
             Field(j => j.Nome);
             Field(j => j.Sobrenome);
+            Field(j => j.Posicao);
             //Field<PosicaoPreferencialSchema>("posicao",
             //    resolve: context => jiujitsuAthleteService.)
         }

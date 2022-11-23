@@ -42,6 +42,16 @@ query {
     sobrenome
   }
 }
+
+### Find athlete by id:
+# query {
+#   jiujiteiros(id: 1) {
+#     id
+#     nome
+#     sobrenome
+#     apelido
+#   }
+# }
 ```
 
 Or acess via any RestClient or direcly via cURL
