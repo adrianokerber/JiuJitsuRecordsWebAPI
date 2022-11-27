@@ -66,3 +66,11 @@ curl --location --request POST 'https://localhost:7193/graphql' \
 
 ## Run tests
 In order to run the test just use: `dotnet test`
+
+## Roadmap
+The next steps of this project are:
+
+- [ ] Create teacher model and bind with athlete to display athlete teachers
+- [ ] Add database (MongoDB) to repository IAthleteRepository and remove fake data
+- [ ] Create integration tests for GraphQL responses
+- [ ] Use Mongo2Go on integration tests to check repositories
