@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JiuJitsuRecords.WebAPI", "src\JiuJitsuRecords.WebAPI\JiuJitsuRecords.WebAPI.csproj", "{0D8A86BC-53E1-4449-BCD6-09DCE2927CA3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Domain Layer", "2. Domain Layer", "{A1BB9E70-4139-41DC-A000-F81CBA75BFA8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Domain Layer", "4. Domain Layer", "{A1BB9E70-4139-41DC-A000-F81CBA75BFA8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Host Layer", "4. Host Layer", "{8CF4386A-2918-488E-85B2-66F753C5C53F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Host Layer", "2. Host Layer", "{8CF4386A-2918-488E-85B2-66F753C5C53F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JiuJitsuRecords.Domain", "src\JiuJitsuRecords.Domain\JiuJitsuRecords.Domain.csproj", "{BC653E4B-DDAB-438E-A812-731521D12B2E}"
 EndProject
