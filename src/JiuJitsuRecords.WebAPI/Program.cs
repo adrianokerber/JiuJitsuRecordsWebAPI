@@ -12,14 +12,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.ConfigureApplicationDependencies();
 
 // inject GraphQL schema (The base schema for the base endpoint)
-builder.Services.AddSingleton<ISchema, JiujiteirosSchema>(services => new JiujiteirosSchema(new SelfActivatingServiceProvider(services)));
+builder.Services.AddSingleton<ISchema, JiuJitsuRecordsSchema>(services => new JiuJitsuRecordsSchema(new SelfActivatingServiceProvider(services)));
 
 // register GraphQL
 builder.Services.AddGraphQL(options =>
                     options.ConfigureExecution((opt, next) =>
                     {
                         opt.EnableMetrics = true;
-                        //opt.ThrowOnUnhandledException = true; // Enable to debug errors
+                        opt.ThrowOnUnhandledException = true; // Enable to debug errors
                         return next(opt);
                     }).AddSystemTextJson()
                 );

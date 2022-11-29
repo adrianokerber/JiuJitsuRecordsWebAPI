@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "JiuJitsuRecords.Domain": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:27973;http://localhost:27974"
+    }
+  }
+}

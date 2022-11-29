@@ -1,6 +1,6 @@
 ﻿namespace JiuJitsuRecords.Domain.Entities
 {
-    public enum PosicaoPreferencial
+    public enum EstiloPreferencial
     {
         Guard = 2,
         Pass = 4,

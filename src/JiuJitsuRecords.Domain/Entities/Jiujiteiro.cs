@@ -4,7 +4,8 @@
                              string Apelido,
                              string Nome,
                              string Sobrenome,
-                             DateTimeOffset Nascimento,
-                             PosicaoPreferencial Posicao,
-                             string Descricao);
+                             DateTimeOffset? Nascimento,
+                             EstiloPreferencial EstiloPreferencial,
+                             string Descricao,
+                             IEnumerable<int> PosicaoIds);
 }

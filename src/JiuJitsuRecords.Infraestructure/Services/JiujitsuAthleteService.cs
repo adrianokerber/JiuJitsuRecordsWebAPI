@@ -2,7 +2,7 @@
 using JiuJitsuRecords.Domain.Repositories;
 using JiuJitsuRecords.Domain.Services;
 
-namespace JiuJitsuRecords.WebAPI.Services
+namespace JiuJitsuRecords.Infraestructure.Services
 {
     public class JiujitsuAthleteService : IJiujitsuAthleteService
     {

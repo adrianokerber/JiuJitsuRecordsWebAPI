@@ -2,11 +2,11 @@
 
 namespace JiuJitsuRecords.WebAPI.Schemas
 {
-    public class PosicaoPreferencialEnumType : EnumerationGraphType
+    public class EstiloPreferencialEnumType : EnumerationGraphType
     {
-        public PosicaoPreferencialEnumType()
+        public EstiloPreferencialEnumType()
         {
-            Name = "Posicao";
+            Name = "EstiloPreferencial";
             Add("Guard", 2);
             Add("Pass", 4);
             Add("Any", 8);

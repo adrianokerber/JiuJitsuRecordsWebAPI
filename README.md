@@ -35,11 +35,19 @@ https://localhost:7193/ui/altair
 #  }
 # }
 
-#### Optional: when you query you can put the query in the beginning of the scope
+#### Example: you can encapsulate the query inside the query object
 query {
   jiujiteiros {
+    id
     nome
     sobrenome
+    apelido
+    estiloPreferencial
+  }
+  posicoes {
+    id,
+    nome,
+    descricao
   }
 }
 

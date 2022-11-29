@@ -20,15 +20,17 @@ namespace JiuJitsuRecords.Infraestructure.Repositories
                                         "Micael Ferreira",
                                         "Galvão",
                                         new DateTimeOffset(2003, 10, 8, 0, 0, 0, TimeSpan.Zero),
-                                        PosicaoPreferencial.Any,
-                                        "Micael Galvão, também conhecido como Mica (Manaus, 8 de outubro de 2003), é um lutador profissional de Jiu-jitsu campeão mundial em sua categoria e absoluto. Mica é filho e faixa preta do mestre Melqui Galvão, e compete pela academia Fight Sports.");
+                                        EstiloPreferencial.Any,
+                                        "Micael Galvão, também conhecido como Mica (Manaus, 8 de outubro de 2003), é um lutador profissional de Jiu-jitsu campeão mundial em sua categoria e absoluto. Mica é filho e faixa preta do mestre Melqui Galvão, e compete pela academia Fight Sports.",
+                                        new List<int> { 1 });
             yield return new Jiujiteiro(2,
                                         "N/A",
                                         "Kade",
                                         "Ruotolo",
                                         new DateTimeOffset(2003, 10, 8, 0, 0, 0, TimeSpan.Zero),
-                                        PosicaoPreferencial.Pass,
-                                        "Kade Ruotolo is a Brazilian jiujitsu submission grappling athlete. A competitor with his brother Tye since the age of 3, Ruotolo is a two-time IBJJF World champion, Pan Am and European Open champion in brown belt. Promoted to black belt in December 2021, Ruotolo won the 2022 ADCC World Championship in the 77kg division, becoming at age 19 the youngest-ever ADCC Submission Fighting World champion");
+                                        EstiloPreferencial.Pass,
+                                        "Kade Ruotolo is a Brazilian jiujitsu submission grappling athlete. A competitor with his brother Tye since the age of 3, Ruotolo is a two-time IBJJF World champion, Pan Am and European Open champion in brown belt. Promoted to black belt in December 2021, Ruotolo won the 2022 ADCC World Championship in the 77kg division, becoming at age 19 the youngest-ever ADCC Submission Fighting World champion",
+                                        new List<int>());
         }
 
         public async Task<IEnumerable<Jiujiteiro>> GetAthletes() => await Task.Run(() => _athletes);
