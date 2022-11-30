@@ -1,6 +1,7 @@
 ﻿using GraphQL;
 using GraphQL.Types;
 using JiuJitsuRecords.Domain.Entities;
+using JiuJitsuRecords.WebAPI.Schemas.InputTypes;
 
 namespace JiuJitsuRecords.WebAPI.Schemas
 {
@@ -17,6 +18,7 @@ namespace JiuJitsuRecords.WebAPI.Schemas
         private void RegisterMappings()
         {
             this.RegisterTypeMapping<Posicao, PosicaoType>();
+            this.RegisterTypeMapping<Posicao, PosicaoInputType>();
         }
     }
 }

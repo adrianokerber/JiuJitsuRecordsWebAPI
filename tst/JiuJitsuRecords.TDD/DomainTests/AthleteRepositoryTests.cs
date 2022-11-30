@@ -16,10 +16,10 @@ namespace JiuJitsuRecords.TDD.DomainTests
             yield return new Jiujiteiro(1,
                                         "Mica",
                                         "Micael Ferreira",
-                                        "Galv„o",
+                                        "Galv√£o",
                                         new DateTimeOffset(2003, 10, 8, 0, 0, 0, TimeSpan.Zero),
                                         EstiloPreferencial.Any,
-                                        "Micael Galv„o, tambÈm conhecido como Mica (Manaus, 8 de outubro de 2003), È um lutador profissional de Jiu-jitsu campe„o mundial em sua categoria e absoluto. Mica È filho e faixa preta do mestre Melqui Galv„o, e compete pela academia Fight Sports.",
+                                        "Micael Galv√£o, tamb√©m conhecido como Mica (Manaus, 8 de outubro de 2003), √© um lutador profissional de Jiu-jitsu campe√£o mundial em sua categoria e absoluto. Mica √© filho e faixa preta do mestre Melqui Galv√£o, e compete pela academia Fight Sports.",
                                         new List<int> { 1 });
             yield return new Jiujiteiro(2,
                                         "N/A",
@@ -98,7 +98,7 @@ namespace JiuJitsuRecords.TDD.DomainTests
         {
             // Arrange
             var athleteId = 8;
-            var expectedAthlete = new Jiujiteiro(athleteId, "Apelido", "Nome", "Sobrenome", new DateTimeOffset(2022, 8, 31, 0, 0, 0, TimeSpan.FromHours(-1)), EstiloPreferencial.Guard, "DescriÁ„o", new List<int>());
+            var expectedAthlete = new Jiujiteiro(athleteId, "Apelido", "Nome", "Sobrenome", new DateTimeOffset(2022, 8, 31, 0, 0, 0, TimeSpan.FromHours(-1)), EstiloPreferencial.Guard, "Descri√ß√£o", new List<int>());
 
             IAthleteRepository athleteRepository = new AthleteRepository();
 

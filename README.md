@@ -78,7 +78,10 @@ In order to run the test just use: `dotnet test`
 ## Roadmap
 The next steps of this project are:
 
-- [ ] Create teacher model and bind with athlete to display athlete teachers
+- [ ] Add position entity and relate with athlete to display the positions most used by the athlete
+- [ ] Add InputTypes - specific models to input data througth mutations
+- [ ] Limit data registry by ID and ignore ID == 0 in order to create a new ID on repository and return the updated data
 - [ ] Add database (MongoDB) to repository IAthleteRepository and remove fake data
 - [ ] Create integration tests for GraphQL responses
 - [ ] Use Mongo2Go on integration tests to check repositories
+- [ ] Create teacher model and bind with athlete to display athlete teachers
