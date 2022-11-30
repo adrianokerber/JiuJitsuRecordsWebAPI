@@ -8,5 +8,6 @@ namespace JiuJitsuRecords.Domain.Repositories
         Task<IEnumerable<Posicao>> GetPositionsByIds(IEnumerable<int> ids);
         Task<Posicao?> GetPositionById(int id);
         Task InsertPosition(Posicao posicao);
+        Task<Posicao?> GetPositionByName(string nome);
     }
 }

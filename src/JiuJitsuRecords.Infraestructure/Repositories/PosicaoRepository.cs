@@ -21,5 +21,7 @@ namespace JiuJitsuRecords.Infraestructure.Repositories
         public async Task<IEnumerable<Posicao>> GetPositionsByIds(IEnumerable<int> ids) => await Task.Run(() => _posicoes.Where(x => ids.Any(id => id == x.Id)));
 
         public async Task<IEnumerable<Posicao>> GetPositions() => await Task.Run(() => _posicoes);
+
+        public async Task<Posicao?> GetPositionByName(string nome) => await Task.Run(() => _posicoes.Find(x => x.Nome == nome));
     }
 }
