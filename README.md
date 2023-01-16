@@ -27,13 +27,18 @@ https://localhost:7193/ui/altair
 
 ######################
 ### Mutation example:
-# mutation {
-#  registerAthlete(id: 8 nome: "Adriano")
-#  {
-#    nome
-#    sobrenome
-#  }
-# }
+mutation {
+  registerAthlete(id: 8 nome: "Adriano", sobrenome: "Kerber", nascimento: "1992-08-31T17:30:15+05:30", apelido: "Adri", posicoes: [{ nome: "Armlock" }])
+  {
+    nome
+    sobrenome
+    posicoes {
+      id
+      nome
+      descricao
+    }
+  }
+}
 
 #### Example: you can encapsulate the query inside the query object
 query {
