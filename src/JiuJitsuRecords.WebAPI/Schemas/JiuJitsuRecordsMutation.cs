@@ -23,8 +23,9 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                     new QueryArgument<StringGraphType> { Name = "apelido" },
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "nome" },
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "sobrenome" },
+                    new QueryArgument<DateTimeGraphType> { Name = "nascimento" },
                     new QueryArgument<StringGraphType> { Name = "descricao" },
-                    new QueryArgument<PosicaoInputType>() { Name = "posicoes" }
+                    new QueryArgument<ListGraphType<PosicaoInputType>> { Name = "posicoes" }
                 ))
                 .ResolveAsync(async context =>
                 {
@@ -32,28 +33,28 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                     var apelido = context.GetArgument<string>("apelido") ?? string.Empty;
                     var nome = context.GetArgument<string>("nome") ?? string.Empty;
                     var sobrenome = context.GetArgument<string>("sobrenome") ?? string.Empty;
+                    var nascimento = context.GetArgument<DateTime>("nascimento", default);
                     var descricao = context.GetArgument<string>("descricao") ?? string.Empty;
-                    //var posicoes = context.GetArgument<List<Posicao?>>("posicoes") ?? new List<Posicao?>();
-                    //var posicaoIds = context.GetArgument<List<int>>("posicoes") ?? new List<int>();
-                    var posicoes = context.GetArgument<Posicao?>("posicoes");
+                    var posicoesInput = context.GetArgument<List<Posicao>>("posicoes") ?? new List<Posicao>();
 
-                    var posicao = posicoes != null ? await positionRepository.GetPositionByName(posicoes.Nome) : null;
                     var posicaoIds = new List<int>();
-                    if (posicao != null)
-                        posicaoIds.Add(posicao.Id);
+                    foreach (var posicaoInput in posicoesInput)
+                    {
+                        var posicao = await positionRepository.GetPositionByName(posicaoInput.Nome);
+                        if (posicao != null)
+                            posicaoIds.Add(posicao.Id);
+                    }
+
+                    // TODO: verify if we should create a new position based on the input if the position is not already registered. Match only name not ID
 
                     var jiujiteiro = new Jiujiteiro(id,
                                                     apelido,
                                                     nome,
                                                     sobrenome,
-                                                    DateTimeOffset.Now,
-                                                    EstiloPreferencial.Any,
+                                                    nascimento,
+                                                    EstiloPreferencial.Any, // TODO: add new input type for this field
                                                     descricao,
                                                     posicaoIds);
-
-                    // TODO: properly configure mutation of Athlete + position to receive list
-
-                    // TODO: verify if we should create a new position based on the input if the position is not already registered. Match only name not ID
 
                     await _athleteRepository.InsertAthlete(jiujiteiro);
 
