@@ -10,7 +10,8 @@ namespace JiuJitsuRecords.Infraestructure.Repositories
         public PosicaoRepository()
         {
             _posicoes = new List<Posicao> {
-                new Posicao(1, "Armlock", "Se caracteriza por ser uma alavanca de braço ao travar o braço entre as pernas e puxar para o rosto")
+                new Posicao(1, "Armlock", "Se caracteriza por ser uma alavanca de braço ao travar o braço entre as pernas e puxar para o rosto"),
+                new Posicao(2, "Triângulo", "Se caracteriza por criar a forma de um triângulo por entre as pernas ao cruzar o joelho sobre um dos pés")
             };
         }
 
