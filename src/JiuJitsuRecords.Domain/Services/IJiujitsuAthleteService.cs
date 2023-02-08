@@ -6,5 +6,6 @@ namespace JiuJitsuRecords.Domain.Services
     {
         Task<IEnumerable<Jiujiteiro>> GetJiujitsuAthletes();
         Task<Jiujiteiro> GetJiujitsuAthleteByNickname(string nickname);
+        Task<Jiujiteiro> RegisterJiujitsuAthlete(Jiujiteiro jiujiteiro);
     }
 }

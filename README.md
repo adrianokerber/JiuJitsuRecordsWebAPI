@@ -65,6 +65,15 @@ query {
 #     apelido
 #   }
 # }
+
+### Find position by id:
+# query {
+#   posicoes(id: 1) {
+#     id
+#     nome
+#     descricao
+#   }
+# }
 ```
 
 Or acess via any RestClient or direcly via cURL

@@ -1,7 +1,8 @@
 ﻿using GraphQL;
 using GraphQL.Types;
 using JiuJitsuRecords.Domain.Entities;
-using JiuJitsuRecords.WebAPI.Schemas.InputTypes;
+using JiuJitsuRecords.WebAPI.Schemas.Types;
+using JiuJitsuRecords.WebAPI.Schemas.Types.InputTypes;
 
 namespace JiuJitsuRecords.WebAPI.Schemas
 {

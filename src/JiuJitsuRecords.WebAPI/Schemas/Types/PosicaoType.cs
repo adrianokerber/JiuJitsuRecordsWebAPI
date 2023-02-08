@@ -1,7 +1,7 @@
 ﻿using GraphQL.Types;
 using JiuJitsuRecords.Domain.Entities;
 
-namespace JiuJitsuRecords.WebAPI.Schemas
+namespace JiuJitsuRecords.WebAPI.Schemas.Types
 {
     public class PosicaoType : ObjectGraphType<Posicao>
     {
