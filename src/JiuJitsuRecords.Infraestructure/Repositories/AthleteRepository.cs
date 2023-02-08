@@ -37,6 +37,6 @@ namespace JiuJitsuRecords.Infraestructure.Repositories
 
         public async Task<Jiujiteiro> GetAthleteById(int id) => await Task.Run(() => _athletes.Find(x => x.Id == id));
 
-        public async Task InsertAthlete(Jiujiteiro jiujiteiro) => await Task.Run(() => _athletes.Add(jiujiteiro)); // TODO: must return sucess or failure for insertion when ID already exists
+        public async Task InsertAthlete(Jiujiteiro jiujiteiro) => await Task.Run(() => _athletes.Add(jiujiteiro)); // TODO: must return sucess or failure for insertion when ID already exists and should return added data ex: Task<BaseResult<Jiujiteiro>> and the Jiujiteiro should have the inserted ID
     }
 }

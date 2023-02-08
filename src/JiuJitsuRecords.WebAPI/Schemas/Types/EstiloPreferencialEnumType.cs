@@ -1,6 +1,6 @@
 ﻿using GraphQL.Types;
 
-namespace JiuJitsuRecords.WebAPI.Schemas
+namespace JiuJitsuRecords.WebAPI.Schemas.Types
 {
     public class EstiloPreferencialEnumType : EnumerationGraphType
     {

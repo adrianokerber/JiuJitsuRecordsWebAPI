@@ -1,7 +1,7 @@
 ﻿using GraphQL.Types;
 using JiuJitsuRecords.Domain.Entities;
 
-namespace JiuJitsuRecords.WebAPI.Schemas.InputTypes
+namespace JiuJitsuRecords.WebAPI.Schemas.Types.InputTypes
 {
     public class PosicaoInputType : InputObjectGraphType<Posicao>
     {

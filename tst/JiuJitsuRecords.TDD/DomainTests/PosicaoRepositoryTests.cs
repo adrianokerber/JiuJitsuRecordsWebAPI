@@ -3,7 +3,6 @@ using JiuJitsuRecords.Domain.Entities;
 using JiuJitsuRecords.Domain.Repositories;
 using JiuJitsuRecords.Infraestructure.Repositories;
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 namespace JiuJitsuRecords.TDD.DomainTests
@@ -11,10 +10,13 @@ namespace JiuJitsuRecords.TDD.DomainTests
     public class PosicaoRepositoryTests
     {
         [Fact]
-        public void ShouldGetPositionsMethodReturnAListWithOneMethod()
+        public void ShouldGetPositionsMethodReturnAListWithTwoElements()
         {
             // Arrange
-            var expectedResult = new List<Posicao> { new Posicao(1, "Armlock", "Se caracteriza por ser uma alavanca de braço ao travar o braço entre as pernas e puxar para o rosto") };
+            var expectedResult = new List<Posicao> {
+                new Posicao(1, "Armlock", "Se caracteriza por ser uma alavanca de braço ao travar o braço entre as pernas e puxar para o rosto"),
+                new Posicao(2, "Triângulo", "Se caracteriza por criar a forma de um triângulo por entre as pernas ao cruzar o joelho sobre um dos pés")
+            };
 
             IPositionRepository posicaoRepository = new PosicaoRepository();
 
@@ -26,7 +28,7 @@ namespace JiuJitsuRecords.TDD.DomainTests
             // Assert
             actualResult.Should()
                         .NotBeNullOrEmpty().And
-                        .HaveCount(1).And
+                        .HaveCount(2).And
                         .Contain(expectedResult);
         }
 

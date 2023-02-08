@@ -2,7 +2,7 @@
 using JiuJitsuRecords.Domain.Entities;
 using JiuJitsuRecords.Domain.Repositories;
 
-namespace JiuJitsuRecords.WebAPI.Schemas
+namespace JiuJitsuRecords.WebAPI.Schemas.Types
 {
     public class JiujiteiroType : ObjectGraphType<Jiujiteiro>
     {
