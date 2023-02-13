@@ -15,7 +15,10 @@ namespace JiuJitsuRecords.Infraestructure.Repositories
             };
         }
 
-        public async Task InsertPosition(Posicao posicao) => await Task.Run(() => _posicoes.Add(posicao));
+        public async Task<Posicao?> InsertPosition(Posicao posicao) => await Task.Run(() => {
+            _posicoes.Add(posicao);
+            return posicao;
+        });
 
         public async Task<Posicao?> GetPositionById(int id) => await Task.Run(() => _posicoes.Find(x => x.Id == id));
 
