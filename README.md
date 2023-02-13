@@ -28,7 +28,7 @@ https://localhost:7193/ui/altair
 ######################
 ### Mutation example:
 mutation {
-  registerAthlete(id: 8 nome: "Adriano", sobrenome: "Kerber", nascimento: "1992-08-31T17:30:15+05:30", apelido: "Adri", posicoes: [{ nome: "Armlock" }])
+  registerAthlete(id: 8 nome: "Adriano", sobrenome: "Kerber", nascimento: "1992-08-31T17:30:15+05:30", estiloPreferencial: Guard, apelido: "Adri", posicoes: [{ nome: "Armlock" }])
   {
     nome
     sobrenome
@@ -92,7 +92,7 @@ In order to run the test just use: `dotnet test`
 ## Roadmap
 The next steps of this project are:
 
-- [ ] Add position entity and relate with athlete to display the positions most used by the athlete
+- [X] Add position entity and relate with athlete to display the positions most used by the athlete
 - [ ] Add InputTypes - specific models to input data througth mutations
 - [ ] Limit data registry by ID and ignore ID == 0 in order to create a new ID on repository and return the updated data
 - [ ] Add database (MongoDB) to repository IAthleteRepository and remove fake data

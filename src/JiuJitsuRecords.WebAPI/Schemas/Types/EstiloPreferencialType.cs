@@ -2,9 +2,9 @@
 
 namespace JiuJitsuRecords.WebAPI.Schemas.Types
 {
-    public class EstiloPreferencialEnumType : EnumerationGraphType
+    public class EstiloPreferencialType : EnumerationGraphType
     {
-        public EstiloPreferencialEnumType()
+        public EstiloPreferencialType()
         {
             Name = "EstiloPreferencial";
             Add("Guard", 2);
