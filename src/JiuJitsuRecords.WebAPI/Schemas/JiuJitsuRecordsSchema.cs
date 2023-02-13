@@ -20,6 +20,7 @@ namespace JiuJitsuRecords.WebAPI.Schemas
         {
             this.RegisterTypeMapping<Posicao, PosicaoType>();
             this.RegisterTypeMapping<Posicao, PosicaoInputType>();
+            this.RegisterTypeMapping<EstiloPreferencial, EstiloPreferencialType>();
         }
     }
 }

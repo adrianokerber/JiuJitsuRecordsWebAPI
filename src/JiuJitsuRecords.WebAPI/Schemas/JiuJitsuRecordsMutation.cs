@@ -25,6 +25,7 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "nome" },
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "sobrenome" },
                     new QueryArgument<DateTimeGraphType> { Name = "nascimento" },
+                    new QueryArgument<EstiloPreferencialType> { Name = "estiloPreferencial" },
                     new QueryArgument<StringGraphType> { Name = "descricao" },
                     new QueryArgument<ListGraphType<PosicaoInputType>> { Name = "posicoes" }
                 ))
@@ -35,6 +36,7 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                     var nome = context.GetArgument<string>("nome") ?? string.Empty;
                     var sobrenome = context.GetArgument<string>("sobrenome") ?? string.Empty;
                     var nascimento = context.GetArgument<DateTime>("nascimento", default);
+                    var estiloPreferencial = context.GetArgument<EstiloPreferencial>("estiloPreferencial");
                     var descricao = context.GetArgument<string>("descricao") ?? string.Empty;
                     var posicoesInput = context.GetArgument<List<Posicao>>("posicoes") ?? new List<Posicao>();
 
@@ -53,7 +55,7 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                                                     nome,
                                                     sobrenome,
                                                     nascimento,
-                                                    EstiloPreferencial.Any, // TODO: add new input type for this field
+                                                    estiloPreferencial,
                                                     descricao,
                                                     posicaoIds);
 
