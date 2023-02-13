@@ -44,11 +44,11 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                     foreach (var posicaoInput in posicoesInput)
                     {
                         var posicao = await positionRepository.GetPositionByName(posicaoInput.Nome);
+                        if (posicao == null)
+                            posicao = await positionRepository.InsertPosition(posicaoInput);
                         if (posicao != null)
                             posicaoIds.Add(posicao.Id);
                     }
-
-                    // TODO: verify if we should create a new position based on the input if the position is not already registered. Match only name not ID
 
                     var jiujiteiro = new Jiujiteiro(id,
                                                     apelido,

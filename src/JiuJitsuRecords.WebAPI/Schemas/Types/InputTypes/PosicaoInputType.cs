@@ -10,6 +10,7 @@ namespace JiuJitsuRecords.WebAPI.Schemas.Types.InputTypes
             Name = "PosicaoInput";
             Description = "PosicaoInput Type";
             Field(j => j.Nome);
+            Field(j => j.Descricao, nullable: true);
         }
     }
 }

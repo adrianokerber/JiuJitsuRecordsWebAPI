@@ -11,6 +11,13 @@
             Nome = nome;
         }
 
+        public Posicao(string nome,
+                       string descricao)
+        {
+            Nome = nome;
+            Descricao = descricao;
+        }
+
         public Posicao(int id,
                        string nome,
                        string descricao)
