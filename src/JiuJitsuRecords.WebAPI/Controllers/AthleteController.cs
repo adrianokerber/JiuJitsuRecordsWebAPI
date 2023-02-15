@@ -20,6 +20,7 @@ namespace JiuJitsuRecords.WebAPI.Controllers
         [HttpGet(Name = "GetAthletes")]
         public async Task<IEnumerable<Jiujiteiro>> Get()
         {
+            _logger.LogDebug("GET:/ahtletes requested!");
             return await _jiujitsuAthleteService.GetJiujitsuAthletes();
         }
     }

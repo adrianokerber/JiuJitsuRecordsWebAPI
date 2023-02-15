@@ -8,7 +8,7 @@ namespace JiuJitsuRecords.Infraestructure.Services
     {
         private readonly IAthleteRepository _athleteRepository;
 
-        public JiujitsuAthleteService(IAthleteRepository athleteRepository)
+        public JiujitsuAthleteService(IAthleteRepository athleteRepository, IPositionService positionService)
         {
             _athleteRepository = athleteRepository;
         }

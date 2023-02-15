@@ -2,6 +2,7 @@ using GraphQL;
 using GraphQL.Types;
 using JiuJitsuRecords.Domain.Entities;
 using JiuJitsuRecords.Domain.Repositories;
+using JiuJitsuRecords.Domain.Services;
 using JiuJitsuRecords.WebAPI.Schemas.Types;
 using JiuJitsuRecords.WebAPI.Schemas.Types.InputTypes;
 
@@ -10,12 +11,12 @@ namespace JiuJitsuRecords.WebAPI.Schemas
     public class JiuJitsuRecordsMutation : ObjectGraphType
     {
         private readonly IAthleteRepository _athleteRepository;
-        private readonly IPositionRepository _positionRepository;
+        private readonly IPositionService _positionService;
 
-        public JiuJitsuRecordsMutation(IAthleteRepository athleteRepository, IPositionRepository positionRepository)
+        public JiuJitsuRecordsMutation(IAthleteRepository athleteRepository, IPositionService positionService)
         {
             _athleteRepository = athleteRepository;
-            _positionRepository = positionRepository;
+            _positionService = positionService;
 
             ConfigureAthleteMutation();
             ConfigurePositionMutation();
@@ -45,12 +46,13 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                     var descricao = context.GetArgument<string>("descricao") ?? string.Empty;
                     var posicoesInput = context.GetArgument<List<Posicao>>("posicoes") ?? new List<Posicao>();
 
+                    // TODO: move logic of registering positions to jiu-jitsu service
                     var posicaoIds = new List<int>();
                     foreach (var posicaoInput in posicoesInput)
                     {
-                        var posicao = await _positionRepository.GetPositionByName(posicaoInput.Nome);
+                        var posicao = await _positionService.GetPositionByName(posicaoInput.Nome);
                         if (posicao == null)
-                            posicao = await _positionRepository.InsertPosition(posicaoInput);
+                            posicao = await _positionService.RegisterPosition(posicaoInput);
                         if (posicao != null)
                             posicaoIds.Add(posicao.Id);
                     }
@@ -80,11 +82,7 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                 {
                     var posicaoInput = context.GetArgument<Posicao>("posicao");
 
-                    var posicao = await _positionRepository.GetPositionByName(posicaoInput.Nome);
-                    if (posicao != null)
-                        return posicao;
-                                
-                    posicao = await _positionRepository.InsertPosition(posicaoInput);
+                    var posicao = await _positionService.RegisterPosition(posicaoInput);
 
                     return posicao;
                 });

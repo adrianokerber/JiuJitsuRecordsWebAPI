@@ -6,6 +6,6 @@ namespace JiuJitsuRecords.Domain.Repositories
     {
         Task<IEnumerable<Jiujiteiro>> GetAthletes();
         Task<Jiujiteiro> GetAthleteById(int id);
-        Task InsertAthlete(Jiujiteiro jiujiteiro);
+        Task<Jiujiteiro> InsertAthlete(Jiujiteiro jiujiteiro);
     }
 }

@@ -11,10 +11,11 @@ namespace JiuJitsuRecords.WebAPI
         {
             // Repositories
             services.AddSingleton<IAthleteRepository, AthleteRepository>(); // NOTA: criado como singleton pois estamos utilizando os dados em memória
-            services.AddSingleton<IPositionRepository, PosicaoRepository>();
+            services.AddSingleton<IPositionRepository, PositionRepository>();
 
             // Services
             services.AddTransient<IJiujitsuAthleteService, JiujitsuAthleteService>();
+            services.AddTransient<IPositionService, PositionService>();
         }
     }
 }
