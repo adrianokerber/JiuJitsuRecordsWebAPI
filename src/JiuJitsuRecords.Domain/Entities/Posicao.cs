@@ -2,7 +2,7 @@
 {
     public record Posicao
     {
-        public int Id { get; } = 0;
+        public int Id { get; } = -1;
         public string Nome { get; } = string.Empty;
         public string Descricao { get; } = string.Empty;
 

@@ -43,8 +43,8 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                     }
 
                     var jiujitsuAthletes = _athleteRepository.GetAthletes()
-                                                                .GetAwaiter()
-                                                                .GetResult();
+                                                             .GetAwaiter()
+                                                             .GetResult();
 
                     return jiujitsuAthletes;
                 });
@@ -63,8 +63,8 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                     if (id != null)
                     {
                         var posicao = _positionRepository.GetPositionById(id.GetValueOrDefault())
-                                                            .GetAwaiter()
-                                                            .GetResult();
+                                                         .GetAwaiter()
+                                                         .GetResult();
                         if (posicao != null)
                             return new List<Posicao> { posicao };
                         else
@@ -72,8 +72,8 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                     }
 
                     var posicoes = _positionRepository.GetPositions()
-                                                        .GetAwaiter()
-                                                        .GetResult();
+                                                      .GetAwaiter()
+                                                      .GetResult();
                     return posicoes;
                 });
         }
