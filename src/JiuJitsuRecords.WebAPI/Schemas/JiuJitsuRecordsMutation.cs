@@ -17,7 +17,12 @@ namespace JiuJitsuRecords.WebAPI.Schemas
             _athleteRepository = athleteRepository;
             _positionRepository = positionRepository;
 
-            // TODO: finish registration logic and move to specific Resolver class
+            ConfigureAthleteMutation();
+            ConfigurePositionMutation();
+        }
+
+        private void ConfigureAthleteMutation()
+        {
             Field<JiujiteiroType>("registerAthlete")
                 .Arguments(new QueryArguments(
                     new QueryArgument<IntGraphType> { Name = "id" },
@@ -43,9 +48,9 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                     var posicaoIds = new List<int>();
                     foreach (var posicaoInput in posicoesInput)
                     {
-                        var posicao = await positionRepository.GetPositionByName(posicaoInput.Nome);
+                        var posicao = await _positionRepository.GetPositionByName(posicaoInput.Nome);
                         if (posicao == null)
-                            posicao = await positionRepository.InsertPosition(posicaoInput);
+                            posicao = await _positionRepository.InsertPosition(posicaoInput);
                         if (posicao != null)
                             posicaoIds.Add(posicao.Id);
                     }
@@ -63,8 +68,26 @@ namespace JiuJitsuRecords.WebAPI.Schemas
 
                     return jiujiteiro;
                 });
+        }
 
-            // TODO: add logic to _positionRepository
+        public void ConfigurePositionMutation()
+        {
+            Field<PosicaoType>("registerPosition")
+                .Arguments(new QueryArguments(
+                    new QueryArgument<PosicaoInputType> { Name = "posicao" }
+                ))
+                .ResolveAsync(async context =>
+                {
+                    var posicaoInput = context.GetArgument<Posicao>("posicao");
+
+                    var posicao = await _positionRepository.GetPositionByName(posicaoInput.Nome);
+                    if (posicao != null)
+                        return posicao;
+                                
+                    posicao = await _positionRepository.InsertPosition(posicaoInput);
+
+                    return posicao;
+                });
         }
     }
 }
