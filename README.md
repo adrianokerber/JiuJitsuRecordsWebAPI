@@ -37,7 +37,13 @@ mutation {
       nome
       descricao
     }
-  }
+  },
+  registerPosition(posicao: { nome: "Chave de pé reta", descricao: "Uma chave aplicada no pé que puxa ele..."})
+    {
+      id
+      nome
+      descricao
+    }
 }
 
 #### Example: you can encapsulate the query inside the query object
