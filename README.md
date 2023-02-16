@@ -109,3 +109,9 @@ The next steps of this project are:
 - [ ] Create integration tests for GraphQL responses
 - [ ] Use Mongo2Go on integration tests to check repositories
 - [ ] Create Professor model and bind with athlete to display athlete teachers
+
+## GraphQL vs RESTful API
+There are some differences that I'll try to overcome...
+
+- Documentation like OpenAPI (Swagger)
+- Create proper abstractions of each project layer (Domain, Application, Infraestructure, etc)

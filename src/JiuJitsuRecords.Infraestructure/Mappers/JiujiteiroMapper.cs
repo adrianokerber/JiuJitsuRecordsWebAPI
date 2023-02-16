@@ -24,13 +24,13 @@ namespace JiuJitsuRecords.Infraestructure.Mappers
         }
 
         public static Jiujiteiro ToDomain(this JiujiteiroDocument document)
-            => new Jiujiteiro(document.Id,
-                              document.Apelido,
+            => new Jiujiteiro(document.Apelido,
                               document.Nome,
                               document.Sobrenome,
                               document.Nascimento,
                               document.EstiloPreferencial,
                               document.Descricao,
-                              document.PosicaoIds);
+                              document.PosicaoIds,
+                              document.Id);
     }
 }

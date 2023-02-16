@@ -13,22 +13,22 @@ namespace JiuJitsuRecords.TDD.DomainTests
     {
         private IEnumerable<Jiujiteiro> CreateFakeData()
         {
-            yield return new Jiujiteiro(0,
-                                        "Mica",
+            yield return new Jiujiteiro("Mica",
                                         "Micael Ferreira",
                                         "Galvão",
                                         new DateTimeOffset(2003, 10, 8, 0, 0, 0, TimeSpan.Zero),
                                         EstiloPreferencial.Any,
                                         "Micael Galvão, também conhecido como Mica (Manaus, 8 de outubro de 2003), é um lutador profissional de Jiu-jitsu campeão mundial em sua categoria e absoluto. Mica é filho e faixa preta do mestre Melqui Galvão, e compete pela academia Fight Sports.",
-                                        new List<int> { 1 });
-            yield return new Jiujiteiro(1,
-                                        "N/A",
+                                        new List<int> { 1 },
+                                        0);
+            yield return new Jiujiteiro("N/A",
                                         "Kade",
                                         "Ruotolo",
                                         new DateTimeOffset(2003, 10, 8, 0, 0, 0, TimeSpan.Zero),
                                         EstiloPreferencial.Pass,
                                         "Kade Ruotolo is a Brazilian jiujitsu submission grappling athlete. A competitor with his brother Tye since the age of 3, Ruotolo is a two-time IBJJF World champion, Pan Am and European Open champion in brown belt. Promoted to black belt in December 2021, Ruotolo won the 2022 ADCC World Championship in the 77kg division, becoming at age 19 the youngest-ever ADCC Submission Fighting World champion",
-                                        new List<int>());
+                                        new List<int>(),
+                                        1);
         }
 
         [Fact]
@@ -98,7 +98,7 @@ namespace JiuJitsuRecords.TDD.DomainTests
         {
             // Arrange
             var athleteId = 8;
-            var expectedAthlete = new Jiujiteiro(athleteId, "Apelido", "Nome", "Sobrenome", new DateTimeOffset(2022, 8, 31, 0, 0, 0, TimeSpan.FromHours(-1)), EstiloPreferencial.Guard, "Descrição", new List<int>());
+            var expectedAthlete = new Jiujiteiro("Apelido", "Nome", "Sobrenome", new DateTimeOffset(2022, 8, 31, 0, 0, 0, TimeSpan.FromHours(-1)), EstiloPreferencial.Guard, "Descrição", new List<int>(), athleteId);
 
             IAthleteRepository athleteRepository = new AthleteRepository();
 

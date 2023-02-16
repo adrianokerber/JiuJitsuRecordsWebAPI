@@ -6,8 +6,7 @@ namespace JiuJitsuRecords.Application.Mappers
     public static class AthleteMapper
     {
         public static Jiujiteiro ToDomain(this AthleteDto dto, List<int> posicaoIds = default)
-            => new Jiujiteiro(-1,
-                              dto.Apelido,
+            => new Jiujiteiro(dto.Apelido,
                               dto.Nome,
                               dto.Sobrenome,
                               dto.Nascimento,
