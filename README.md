@@ -28,7 +28,7 @@ https://localhost:7193/ui/altair
 ######################
 ### Mutation example:
 mutation {
-  registerAthlete(id: 8 nome: "Adriano", sobrenome: "Kerber", nascimento: "1992-08-31T17:30:15+05:30", estiloPreferencial: Guard, apelido: "Adri", posicoes: [{ nome: "Armlock" }, { nome: "Armlock Fantasma", descricao: "Quando o adversário está de quatro apoios e você puxa a lapela dele por baixo do braço e se joga só segurando na lapela o braço irá se abrir para que você possa pegá-lo ao cair no chão." }])
+  registerAthlete(nome: "Adriano", sobrenome: "Kerber", nascimento: "1992-08-31T17:30:15+05:30", estiloPreferencial: Guard, apelido: "Adri", posicoes: [{ nome: "Armlock" }, { nome: "Armlock Fantasma", descricao: "Quando o adversário está de quatro apoios e você puxa a lapela dele por baixo do braço e se joga só segurando na lapela o braço irá se abrir para que você possa pegá-lo ao cair no chão." }])
   {
     nome
     sobrenome
@@ -101,10 +101,11 @@ The next steps of this project are:
 - [X] Add position entity and relate with athlete to display the positions most used by the athlete
 - [X] Add InputTypes - specific models to input data througth mutations
 - [X] Finish Position service and all logic related to Positions
-- [ ] Domain of Jiujiteiro must have a list of positions instead of a list of its IDs? What is the right Domain if some data must be build lazyload?
-- [ ] Registration of Jiujiteiro must use 
-- [ ] Limit data registry by ID and ignore ID == 0 in order to create a new ID on repository and return the updated data
+- [X] Fix architectural layers of project adding mappers and proper domain encapsulation
+- [X] Registration of Jiujiteiro must not use ID on GraphQL Mutation but service should accept ID registration
+- [ ] How to update data? - Maybe use the ID as an input parameter to update data on mutation or create a specific mutation to update data
+- [ ] Fix RESTful API to have the same behaviour of the GraphQL API bringing full data of Positions for each Athlete instead of the simple IDs. Think about how to divide on the Repositories the queries for GraphQL and RESTful
 - [ ] Add database (MongoDB) to repository IAthleteRepository and remove fake data
 - [ ] Create integration tests for GraphQL responses
 - [ ] Use Mongo2Go on integration tests to check repositories
-- [ ] Create teacher model and bind with athlete to display athlete teachers
+- [ ] Create Professor model and bind with athlete to display athlete teachers
