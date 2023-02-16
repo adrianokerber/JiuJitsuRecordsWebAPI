@@ -54,8 +54,26 @@ namespace JiuJitsuRecords.Infraestructure.Repositories
 
         public async Task<Jiujiteiro?> GetAthleteByNickname(string nickname) => await Task.Run(() => _athletes.Find(x => x.Apelido == nickname)?.ToDomain());
 
-        public async Task<Jiujiteiro?> InsertAthlete(Jiujiteiro jiujiteiroInput) => await Task.Run(() => {
-            var jiujiteiroId = jiujiteiroInput.Id;
+        public async Task<Jiujiteiro?> InsertAthlete(Jiujiteiro jiujiteiroInput)
+        {
+            if (jiujiteiroInput == null) return null;
+
+            Jiujiteiro? jiujiteiro = null;
+            if (jiujiteiroInput.Id >= 0)
+            {
+                jiujiteiro = await GetAthleteById(jiujiteiroInput.Id);
+                if (jiujiteiro != null)
+                    return null;
+            }
+
+            jiujiteiro = FakeDatabaseInsertionOfJiujiteiroObject(jiujiteiroInput);
+
+            return jiujiteiro;
+        }
+
+        private Jiujiteiro FakeDatabaseInsertionOfJiujiteiroObject(Jiujiteiro jiujiteiroEntity)
+        {
+            var jiujiteiroId = jiujiteiroEntity.Id;
             if (jiujiteiroId < 0)
             {
                 lock (_idLock)
@@ -64,10 +82,10 @@ namespace JiuJitsuRecords.Infraestructure.Repositories
                 }
             }
 
-            var jiujiteiroDocument = jiujiteiroInput.ToDocument(jiujiteiroId);
+            var jiujiteiroDocument = jiujiteiroEntity.ToDocument(jiujiteiroId);
             _athletes.Add(jiujiteiroDocument);
 
             return jiujiteiroDocument.ToDomain();
-        });
+        }
     }
 }

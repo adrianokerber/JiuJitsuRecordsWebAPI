@@ -5,6 +5,7 @@ namespace JiuJitsuRecords.Infraestructure.Repositories
 {
     public class PositionRepository : IPositionRepository
     {
+        // TODO: review if we should use a proper model PosicaoDocument for database entity instead of the Domain entity directly
         private readonly List<Posicao> _posicoes;
         private int _currentInsertedItemId = 0;
 

@@ -27,7 +27,6 @@ namespace JiuJitsuRecords.WebAPI.Schemas
         {
             Field<JiujiteiroType>("registerAthlete")
                 .Arguments(new QueryArguments(
-                    new QueryArgument<IntGraphType> { Name = "id" },
                     new QueryArgument<StringGraphType> { Name = "apelido" },
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "nome" },
                     new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "sobrenome" },
@@ -38,7 +37,6 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                 ))
                 .ResolveAsync(async context =>
                 {
-                    var id = context.GetArgument<int>("id"); // TODO: remove ID from mutation? We are not using it right now
                     var apelido = context.GetArgument<string>("apelido") ?? string.Empty;
                     var nome = context.GetArgument<string>("nome") ?? string.Empty;
                     var sobrenome = context.GetArgument<string>("sobrenome") ?? string.Empty;
