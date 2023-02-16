@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JiuJitsuRecords.Application\JiuJitsuRecords.Application.csproj" />
     <ProjectReference Include="..\JiuJitsuRecords.Domain\JiuJitsuRecords.Domain.csproj" />
     <ProjectReference Include="..\JiuJitsuRecords.Infraestructure\JiuJitsuRecords.Infraestructure.csproj" />
   </ItemGroup>

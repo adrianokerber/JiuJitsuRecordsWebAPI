@@ -1,5 +1,5 @@
-﻿using JiuJitsuRecords.Domain.Entities;
-using JiuJitsuRecords.Domain.Services;
+﻿using JiuJitsuRecords.Application.Interfaces;
+using JiuJitsuRecords.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JiuJitsuRecords.WebAPI.Controllers

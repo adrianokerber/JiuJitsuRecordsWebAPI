@@ -13,7 +13,7 @@ namespace JiuJitsuRecords.TDD.DomainTests
     {
         private IEnumerable<Jiujiteiro> CreateFakeData()
         {
-            yield return new Jiujiteiro(1,
+            yield return new Jiujiteiro(0,
                                         "Mica",
                                         "Micael Ferreira",
                                         "Galvão",
@@ -21,7 +21,7 @@ namespace JiuJitsuRecords.TDD.DomainTests
                                         EstiloPreferencial.Any,
                                         "Micael Galvão, também conhecido como Mica (Manaus, 8 de outubro de 2003), é um lutador profissional de Jiu-jitsu campeão mundial em sua categoria e absoluto. Mica é filho e faixa preta do mestre Melqui Galvão, e compete pela academia Fight Sports.",
                                         new List<int> { 1 });
-            yield return new Jiujiteiro(2,
+            yield return new Jiujiteiro(1,
                                         "N/A",
                                         "Kade",
                                         "Ruotolo",
@@ -57,8 +57,8 @@ namespace JiuJitsuRecords.TDD.DomainTests
         }
 
         [Theory]
+        [InlineData(0)]
         [InlineData(1)]
-        [InlineData(2)]
         public void ShouldAthleteRepositoryGetAthleteByIdMethodReturnsSpecificAthlete(int athleteId)
         {
             // Arrange

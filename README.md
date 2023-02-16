@@ -100,6 +100,9 @@ The next steps of this project are:
 
 - [X] Add position entity and relate with athlete to display the positions most used by the athlete
 - [X] Add InputTypes - specific models to input data througth mutations
+- [X] Finish Position service and all logic related to Positions
+- [ ] Domain of Jiujiteiro must have a list of positions instead of a list of its IDs? What is the right Domain if some data must be build lazyload?
+- [ ] Registration of Jiujiteiro must use 
 - [ ] Limit data registry by ID and ignore ID == 0 in order to create a new ID on repository and return the updated data
 - [ ] Add database (MongoDB) to repository IAthleteRepository and remove fake data
 - [ ] Create integration tests for GraphQL responses
