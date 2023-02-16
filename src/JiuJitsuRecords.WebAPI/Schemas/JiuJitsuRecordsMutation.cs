@@ -1,7 +1,8 @@
 using GraphQL;
 using GraphQL.Types;
+using JiuJitsuRecords.Application.Entities;
+using JiuJitsuRecords.Application.Interfaces;
 using JiuJitsuRecords.Domain.Entities;
-using JiuJitsuRecords.Domain.Repositories;
 using JiuJitsuRecords.Domain.Services;
 using JiuJitsuRecords.WebAPI.Schemas.Types;
 using JiuJitsuRecords.WebAPI.Schemas.Types.InputTypes;
@@ -10,12 +11,12 @@ namespace JiuJitsuRecords.WebAPI.Schemas
 {
     public class JiuJitsuRecordsMutation : ObjectGraphType
     {
-        private readonly IAthleteRepository _athleteRepository;
+        private readonly IJiujitsuAthleteService _jiujitsuAthleteService;
         private readonly IPositionService _positionService;
 
-        public JiuJitsuRecordsMutation(IAthleteRepository athleteRepository, IPositionService positionService)
+        public JiuJitsuRecordsMutation(IJiujitsuAthleteService jiujitsuAthleteService, IPositionService positionService)
         {
-            _athleteRepository = athleteRepository;
+            _jiujitsuAthleteService = jiujitsuAthleteService;
             _positionService = positionService;
 
             ConfigureAthleteMutation();
@@ -37,7 +38,7 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                 ))
                 .ResolveAsync(async context =>
                 {
-                    var id = context.GetArgument<int>("id");
+                    var id = context.GetArgument<int>("id"); // TODO: remove ID from mutation? We are not using it right now
                     var apelido = context.GetArgument<string>("apelido") ?? string.Empty;
                     var nome = context.GetArgument<string>("nome") ?? string.Empty;
                     var sobrenome = context.GetArgument<string>("sobrenome") ?? string.Empty;
@@ -46,27 +47,8 @@ namespace JiuJitsuRecords.WebAPI.Schemas
                     var descricao = context.GetArgument<string>("descricao") ?? string.Empty;
                     var posicoesInput = context.GetArgument<List<Posicao>>("posicoes") ?? new List<Posicao>();
 
-                    // TODO: move logic of registering positions to jiu-jitsu service
-                    var posicaoIds = new List<int>();
-                    foreach (var posicaoInput in posicoesInput)
-                    {
-                        var posicao = await _positionService.GetPositionByName(posicaoInput.Nome);
-                        if (posicao == null)
-                            posicao = await _positionService.RegisterPosition(posicaoInput);
-                        if (posicao != null)
-                            posicaoIds.Add(posicao.Id);
-                    }
-
-                    var jiujiteiro = new Jiujiteiro(id,
-                                                    apelido,
-                                                    nome,
-                                                    sobrenome,
-                                                    nascimento,
-                                                    estiloPreferencial,
-                                                    descricao,
-                                                    posicaoIds);
-
-                    await _athleteRepository.InsertAthlete(jiujiteiro);
+                    var athlete = new AthleteDto(apelido, nome, sobrenome, nascimento, estiloPreferencial, descricao);
+                    var jiujiteiro = await _jiujitsuAthleteService.RegisterJiujitsuAthleteWithPositions(athlete, posicoesInput);
 
                     return jiujiteiro;
                 });

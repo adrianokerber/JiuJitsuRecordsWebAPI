@@ -1,4 +1,6 @@
-﻿using JiuJitsuRecords.Domain.Repositories;
+﻿using JiuJitsuRecords.Application.Interfaces;
+using JiuJitsuRecords.Application.Services;
+using JiuJitsuRecords.Domain.Repositories;
 using JiuJitsuRecords.Domain.Services;
 using JiuJitsuRecords.Infraestructure.Repositories;
 using JiuJitsuRecords.Infraestructure.Services;
